@@ -99,7 +99,7 @@ const teamMembers: TeamMember[] = [
     role: "Cybersecurity Cell Lead",
     quote: "Building, guiding, securing. That's the mission.",
     linkedin: "https://www.linkedin.com/in/hafsa-mokhlis-a5521a210?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADVs8mEB-0JKKgNSUiXi_7nrHkmVFJC55zc&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BqUBDYSgdSnau9bjDaqPkbw%3D%3D",
-    image: "/placeholder.svg?height=400&width=250&text=Hafsa",
+    image: "/images/staff/Hafsa.png",
   },
   {
     id: 12,
@@ -148,12 +148,20 @@ export default function Team() {
                 </a>
                 <div className="image-container-portrait">
                   <img
-                    src={member.image || "/placeholder.svg"}
+                    src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover rounded-md"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement
-                      target.src = `/placeholder.svg?height=400&width=250&text=${encodeURIComponent(member.name.split(" ")[0])}`
+                      // Create a simple data URL with the member's initials
+                      const initials = member.name.split(" ").map(n => n[0]).join("").substring(0, 2)
+                      const svg = `data:image/svg+xml;base64,${btoa(`
+                        <svg width="250" height="400" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100%" height="100%" fill="#374151"/>
+                          <text x="50%" y="50%" text-anchor="middle" dy="0.3em" font-family="Arial" font-size="48" fill="#9CA3AF">${initials}</text>
+                        </svg>
+                      `)}`
+                      target.src = svg
                     }}
                   />
                 </div>

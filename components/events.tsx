@@ -48,8 +48,14 @@ export default function Events() {
     } else if (currentSrc.includes("mqdefault")) {
       target.src = `https://img.youtube.com/vi/${videoId}/default.jpg`
     } else {
-      // Final fallback to a placeholder
-      target.src = `/placeholder.svg?height=200&width=350&text=${encodeURIComponent(videoId)}`
+      // Final fallback to a simple SVG
+      const svg = `data:image/svg+xml;base64,${btoa(`
+        <svg width="350" height="200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="100%" fill="#374151"/>
+          <text x="50%" y="50%" text-anchor="middle" dy="0.3em" font-family="Arial" font-size="16" fill="#9CA3AF">Video: ${videoId}</text>
+        </svg>
+      `)}`
+      target.src = svg
     }
   }
 
@@ -70,7 +76,7 @@ export default function Events() {
               <CardHeader>
                 <div className="relative group cursor-pointer" onClick={() => openVideo(event.videoId)}>
                   <img
-                    src={getThumbnailUrl(event.videoId) || "/placeholder.svg"}
+                    src={getThumbnailUrl(event.videoId)}
                     alt={event.title}
                     className="w-full h-48 object-cover rounded-lg"
                     onError={(e) => handleThumbnailError(e, event.videoId)}

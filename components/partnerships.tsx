@@ -57,13 +57,20 @@ export default function Partnerships() {
               >
                 <div className="w-32 h-32 mb-4 flex items-center justify-center">
                   <img
-                    src={partner.logo || "/placeholder.svg"}
+                    src={partner.logo}
                     alt={partner.name}
                     className="w-full h-full object-contain mix-blend-normal"
                     style={{ filter: "drop-shadow(0 0 10px rgba(0,0,0,0.3))" }}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement
-                      target.src = `/placeholder.svg?height=200&width=200&text=${encodeURIComponent(partner.name.replace(/\s+/g, "+"))}`
+                      // Create a simple data URL with the partner name
+                      const svg = `data:image/svg+xml;base64,${btoa(`
+                        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100%" height="100%" fill="#374151"/>
+                          <text x="50%" y="50%" text-anchor="middle" dy="0.3em" font-family="Arial" font-size="14" fill="#9CA3AF">${partner.name}</text>
+                        </svg>
+                      `)}`
+                      target.src = svg
                     }}
                   />
                 </div>
