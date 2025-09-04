@@ -13,7 +13,7 @@ interface TrainingCell {
   description: string
   icon: React.ReactNode
   gradient: string
-  yearPlan: string
+  yearPlan?: string
   goal?: string
   keyActivities?: string
 }
@@ -35,17 +35,19 @@ const trainingCells: TrainingCell[] = [
     description: "Algorithmic problem solving and contest preparation",
     icon: <Trophy className="h-8 w-8" />,
     gradient: "from-yellow-500 to-orange-600",
-    yearPlan:
-      "Master advanced algorithms, participate in ICPC and online contests, and develop problem-solving skills for technical interviews.",
+    goal: "To build a strong culture of problem-solving and algorithmic thinking that benefits students across all IT fields. This cell is open to all programming levels and welcomes the use of any programming language, making it a flexible space to grow. Members improve their skills through contests, challenges, and teamwork, preparing them for competitions and technical interviews, as well as advanced programming tasks, while fostering resilience and collaboration.",
+    keyActivities:
+      "**Biweekly Contest:** A series of 10 themed contests with bootcamps and live corrections on YouTube.\n\n**Top 150 LeetCode Problems:** A structured problem-solving track, with challenges published twice a week on Discord and staff support provided for guidance and corrections.\n\n**Clash of Code Tournament:** A special Ramadan tournament, held in multiple phases, featuring diverse challenge formats.",
   },
   {
     id: "development",
-    title: "Development",
+    title: "Development Cell",
     description: "Full-stack development and modern technologies",
     icon: <Code className="h-8 w-8" />,
     gradient: "from-blue-500 to-cyan-600",
-    yearPlan:
-      "Learn modern frameworks, build real-world applications, and master both frontend and backend development with industry best practices.",
+    goal: "To empower students who are passionate about software development by equipping them with the essential tools, languages, and frameworks to bring their ideas to life. As software development forms the foundation of all IT fields, this cell is designed for everyone, regardless of their study path. Members will gain both technical expertise and real-world project experience, bridging the gap between theory and practice.",
+    keyActivities:
+      "**Git & GitHub Bootcamp:** A 3-session program introducing Git workflow, branching, and commits, followed by collaboration on GitHub, best practices, and troubleshooting common issues. The track concludes with contributing to the official Apps Club repository.\n\n**Python Essentials Program:** A 7-session program starting with syntax, variables, and control structures, then progressing to functions, data structures, and object-oriented programming. Includes online project-based sessions for deeper practice.",
   },
   {
     id: "datascience",
@@ -53,8 +55,9 @@ const trainingCells: TrainingCell[] = [
     description: "Data analysis, machine learning, and AI",
     icon: <Database className="h-8 w-8" />,
     gradient: "from-purple-500 to-pink-600",
-    yearPlan:
-      "Explore data analysis, machine learning algorithms, and AI applications with hands-on projects using Python and modern ML frameworks.",
+    goal: "To cultivate a collaborative community of aspiring data scientists and AI practitioners, guiding members from foundational machine learning to advanced AI techniques. The Data Cell emphasizes hands-on learning, real-world projects, and teamwork, preparing members to tackle practical challenges and innovate in the data-driven world.",
+    keyActivities:
+      "**Machine Learning Foundations:** A 4-session program introducing core principles of supervised learning, model training, and evaluation. Concludes with a guided project on real datasets to consolidate understanding.\n\n**Advanced AI Mastery:** A two-part program covering deep learning, transfer learning, and NLP with Transformers (3 sessions each). Includes hands-on projects such as image classification with pre-trained models and text generation systems.\n\n**End-to-End AI Systems:** A 5-session program on building full AI pipelines, from data acquisition to deployment and monitoring. Culminates in a final project where members design and present a functional AI solution, with certificates awarded for successful completion.",
   },
   {
     id: "cybersecurity",
@@ -62,8 +65,9 @@ const trainingCells: TrainingCell[] = [
     description: "Information security and ethical hacking",
     icon: <Shield className="h-8 w-8" />,
     gradient: "from-red-500 to-rose-600",
-    yearPlan:
-      "Learn network security, penetration testing, and ethical hacking techniques while preparing for industry certifications.",
+    goal: "To introduce and guide students into the world of cybersecurity, helping them build knowledge, skills, and a professional network. The Cybersecurity Cell supports beginners in developing curiosity and core foundations, while enabling advanced learners to prepare for real-world challenges, certifications, and competitions. Its mission is to create a skilled, collaborative, and supportive community of security enthusiasts.",
+    keyActivities:
+      "**Cyber Hub Community:** An always-active online space on Discord where beginners receive guidance, learners exchange knowledge, and advanced members collaborate on projects and challenges. Includes guest workshops, Blue vs. Red Team events, quizzes, AMA sessions, and continuous knowledge sharing.\n\n**Foundations of Cybersecurity:** A mentor-led program covering essential topics such as networking basics, protocols, system fundamentals, and introductory Linux. Features hands-on labs and guided practice to build strong technical foundations.\n\n**Applied Security Skills:** An advanced program focusing on deeper networking, OS administration, scripting, and vulnerability assessment. Learners engage in labs, projects, and offensive/defensive simulations to strengthen real-world capabilities.",
   },
 ]
 

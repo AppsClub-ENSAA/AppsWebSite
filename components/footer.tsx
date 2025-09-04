@@ -26,8 +26,12 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">AC</span>
+              <div className="w-10 h-10 flex items-center justify-center">
+                <img 
+                  src="/images/logo-white.png" 
+                  alt="AppsClub Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">AppsClub</h3>
@@ -74,7 +78,7 @@ export default function Footer() {
           <div className="flex items-center gap-4 mt-4 md:mt-0 text-sm">
             <span className="text-gray-400">Developed by</span>
             <a
-              href="https://linkedin.com/in/youssef-taguejgalet"
+              href="https://www.linkedin.com/in/youssef-tag/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-0.5"
@@ -84,7 +88,7 @@ export default function Footer() {
             </a>
             <span className="text-gray-400">and</span>
             <a
-              href="https://linkedin.com/in/houcine-gahboub"
+              href="https://www.linkedin.com/in/houcine-gahboub-32955b32b"
               target="_blank"
               rel="noopener noreferrer"
               className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-0.5"

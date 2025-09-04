@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Play, MapPin, Calendar } from "lucide-react"
+import { Play, MapPin, Calendar, Youtube } from "lucide-react"
 
 export default function Events() {
   const events = [
@@ -65,7 +65,7 @@ export default function Events() {
           {events.map((event) => (
             <Card
               key={event.id}
-              className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 hover:scale-105"
+              className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 hover:scale-105 flex flex-col h-full"
             >
               <CardHeader>
                 <div className="relative group cursor-pointer" onClick={() => openVideo(event.videoId)}>
@@ -75,17 +75,22 @@ export default function Events() {
                     className="w-full h-48 object-cover rounded-lg"
                     onError={(e) => handleThumbnailError(e, event.videoId)}
                   />
+                  {/* YouTube icon overlay - always visible */}
+                  <div className="absolute top-3 right-3 bg-red-600 text-white p-2 rounded-lg shadow-lg">
+                    <Youtube className="h-4 w-4" />
+                  </div>
+                  {/* Play button on hover */}
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                     <Play className="h-16 w-16 text-white" />
                   </div>
                 </div>
                 <CardTitle className="text-xl font-bold text-white mt-4">{event.title}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-300 leading-relaxed">{event.description}</p>
+              <CardContent className="space-y-4 flex flex-col h-full">
+                <p className="text-gray-300 leading-relaxed flex-grow">{event.description}</p>
 
-                {/* Location and Date */}
-                <div className="flex flex-col sm:flex-row gap-2 pt-2 border-t border-gray-700">
+                {/* Location and Date - Fixed height section */}
+                <div className="flex flex-col sm:flex-row gap-2 pt-4 border-t border-gray-700 mt-auto min-h-[3rem]">
                   <div className="flex items-center gap-2 text-gray-400 text-sm">
                     <MapPin className="h-4 w-4 text-purple-400" />
                     <span>{event.location}</span>

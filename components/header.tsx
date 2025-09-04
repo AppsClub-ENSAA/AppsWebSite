@@ -47,8 +47,12 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-sm sm:text-lg">AC</span>
+            <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
+              <img 
+                src="/images/logo-white.png" 
+                alt="AppsClub Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="hidden sm:block">
               <h1 className="text-lg sm:text-xl font-bold text-white smooth-transition">AppsClub</h1>
@@ -77,7 +81,7 @@ export default function Header() {
               size="sm"
               className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold shadow-lg hover:shadow-xl smooth-transition text-xs sm:text-sm px-3 sm:px-4"
             >
-              <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://forms.gle/w2npKDCXWX99kDVC6" target="_blank" rel="noopener noreferrer">
                 Register
               </a>
             </Button>

@@ -81,7 +81,7 @@ export default function QuickStats() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           <StatCard number="650+" label="Active Members" delay={0} />
           <StatCard number="10+" label="Years of Activity" delay={200} />
-          <StatCard number="15+" label="Staff Members" delay={400} />
+          <StatCard number="13+" label="Staff Members" delay={400} />
           <StatCard number="5+" label="Training Sessions per Week" delay={600} />
           <StatCard number="4+" label="Targeted Fields" delay={800} />
         </div>

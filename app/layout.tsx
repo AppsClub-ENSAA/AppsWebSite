@@ -8,7 +8,11 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "AppsClub ENSA Agadir",
   description: "Official website of AppsClub ENSA Agadir - Leading technology and innovation in software development",
-    generator: 'v0.app'
+  icons: {
+    icon: '/images/logo-white.png',
+    shortcut: '/images/logo-white.png',
+    apple: '/images/logo-white.png',
+  },
 }
 
 export default function RootLayout({
