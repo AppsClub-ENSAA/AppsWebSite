@@ -1,11 +1,9 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { GraduationCap, Trophy, Code, Database, Shield, Target, Calendar } from "lucide-react"
+import { GraduationCap, Trophy, Code, Database, Shield, Target, Calendar, X } from "lucide-react"
 
 interface TrainingCell {
   id: string
@@ -87,6 +85,16 @@ export default function TrainingCells() {
     })
   }
 
+  const openModal = (cell: TrainingCell) => {
+    setSelectedCell(cell)
+    document.body.style.overflow = 'hidden' // Prevent background scrolling
+  }
+
+  const closeModal = () => {
+    setSelectedCell(null)
+    document.body.style.overflow = 'unset' // Restore scrolling
+  }
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
       <div className="max-w-7xl mx-auto">
@@ -99,65 +107,89 @@ export default function TrainingCells() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {trainingCells.map((cell) => (
-            <Dialog key={cell.id}>
-              <DialogTrigger asChild>
-                <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 hover:scale-105 cursor-pointer group h-full flex flex-col">
-                  <CardHeader className="text-center pb-4 flex-shrink-0">
-                    <div
-                      className={`w-16 h-16 bg-gradient-to-br ${cell.gradient} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <div className="text-white">{cell.icon}</div>
-                    </div>
-                    <CardTitle className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors duration-300 min-h-[3.5rem] flex items-center justify-center">
-                      {cell.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow flex items-center justify-center">
-                    <p className="text-gray-400 text-sm text-center leading-relaxed w-full">{cell.description}</p>
-                  </CardContent>
-                </Card>
-              </DialogTrigger>
-              <DialogContent className="bg-gray-800 border-gray-700 text-white max-w-4xl max-h-[90vh] overflow-y-auto">
-                <DialogHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div
-                      className={`w-12 h-12 bg-gradient-to-br ${cell.gradient} rounded-full flex items-center justify-center`}
-                    >
-                      <div className="text-white">{cell.icon}</div>
-                    </div>
-                    <DialogTitle className="text-2xl font-bold text-white">{cell.title}</DialogTitle>
-                  </div>
-                </DialogHeader>
-                <div className="space-y-6">
-                  {cell.goal && (
-                    <div>
-                      <h4 className="text-lg font-semibold text-purple-400 mb-3 flex items-center gap-2">
-                        <Target className="h-5 w-5" />
-                        Goal
-                      </h4>
-                      <p className="text-gray-300 leading-relaxed">{cell.goal}</p>
-                    </div>
-                  )}
-                  {cell.keyActivities && (
-                    <div>
-                      <h4 className="text-lg font-semibold text-purple-400 mb-3 flex items-center gap-2">
-                        <Calendar className="h-5 w-5" />
-                        Key Activities
-                      </h4>
-                      <div className="text-gray-300 leading-relaxed">{formatText(cell.keyActivities)}</div>
-                    </div>
-                  )}
-                  {!cell.goal && !cell.keyActivities && (
-                    <div>
-                      <h4 className="text-lg font-semibold text-purple-400 mb-3">Year Plan</h4>
-                      <p className="text-gray-300 leading-relaxed">{cell.yearPlan}</p>
-                    </div>
-                  )}
+            <Card 
+              key={cell.id}
+              onClick={() => openModal(cell)}
+              className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 hover:scale-105 cursor-pointer group h-full flex flex-col"
+            >
+              <CardHeader className="text-center pb-4 flex-shrink-0">
+                <div
+                  className={`w-16 h-16 bg-gradient-to-br ${cell.gradient} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <div className="text-white">{cell.icon}</div>
                 </div>
-              </DialogContent>
-            </Dialog>
+                <CardTitle className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors duration-300 min-h-[3.5rem] flex items-center justify-center">
+                  {cell.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow flex items-center justify-center">
+                <p className="text-gray-400 text-sm text-center leading-relaxed w-full">{cell.description}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
+
+        {/* Custom Modal */}
+        {selectedCell && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center">
+            {/* Backdrop */}
+            <div 
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+              onClick={closeModal}
+            />
+            
+            {/* Modal Content */}
+            <div className="relative bg-gray-800 border border-gray-700 rounded-lg shadow-2xl max-h-[90vh] overflow-y-auto w-[calc(100%-1rem)] max-w-4xl mx-2 sm:mx-4">
+              {/* Close Button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 z-10 text-gray-400 hover:text-white transition-colors duration-200 bg-gray-900/80 p-2 rounded-full"
+              >
+                <X className="h-5 w-5" />
+              </button>
+              
+              {/* Modal Header */}
+              <div className="p-6 border-b border-gray-700">
+                <div className="flex items-center gap-4">
+                  <div
+                    className={`w-12 h-12 bg-gradient-to-br ${selectedCell.gradient} rounded-full flex items-center justify-center flex-shrink-0`}
+                  >
+                    <div className="text-white">{selectedCell.icon}</div>
+                  </div>
+                  <h2 className="text-2xl font-bold text-white">{selectedCell.title}</h2>
+                </div>
+              </div>
+              
+              {/* Modal Body */}
+              <div className="p-6 space-y-6">
+                {selectedCell.goal && (
+                  <div>
+                    <h4 className="text-lg font-semibold text-purple-400 mb-3 flex items-center gap-2">
+                      <Target className="h-5 w-5" />
+                      Goal
+                    </h4>
+                    <p className="text-gray-300 leading-relaxed">{selectedCell.goal}</p>
+                  </div>
+                )}
+                {selectedCell.keyActivities && (
+                  <div>
+                    <h4 className="text-lg font-semibold text-purple-400 mb-3 flex items-center gap-2">
+                      <Calendar className="h-5 w-5" />
+                      Key Activities
+                    </h4>
+                    <div className="text-gray-300 leading-relaxed">{formatText(selectedCell.keyActivities)}</div>
+                  </div>
+                )}
+                {!selectedCell.goal && !selectedCell.keyActivities && (
+                  <div>
+                    <h4 className="text-lg font-semibold text-purple-400 mb-3">Year Plan</h4>
+                    <p className="text-gray-300 leading-relaxed">{selectedCell.yearPlan}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )

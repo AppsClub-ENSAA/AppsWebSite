@@ -10,10 +10,12 @@ import ConnectWithUs from "@/components/connect-with-us"
 import Footer from "@/components/footer"
 import AnimatedBackground from "@/components/animated-background"
 import Partnerships from "@/components/partnerships"
+import NavigationHandler from "@/components/navigation-handler"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 text-white relative overflow-x-hidden">
+      <NavigationHandler />
       <AnimatedBackground />
       <Header />
       <main>

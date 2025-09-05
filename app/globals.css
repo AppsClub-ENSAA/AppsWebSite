@@ -387,6 +387,36 @@ html::-webkit-scrollbar-thumb:hover {
   .text-content-portrait {
     min-height: 180px !important;
   }
+
+  .image-container-portrait-assistant {
+    width: 228px !important;
+    max-width: 228px !important;
+    height: 360px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card-portrait {
+    width: 240px !important;
+    min-width: 240px !important;
+    height: 540px !important;
+  }
+
+  .image-container-portrait {
+    width: 208px !important;
+    max-width: 208px !important;
+    height: 320px !important;
+  }
+
+  .text-content-portrait {
+    min-height: 180px !important;
+  }
+
+  .image-container-portrait-assistant {
+    width: 208px !important;
+    max-width: 208px !important;
+    height: 320px !important;
+  }
 }
 
 /* Partnership section custom styles */
@@ -534,12 +564,28 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 /* Mobile dialog responsive adjustments */
-@media (max-width: 768px) {
-  [data-slot="dialog-content"] {
-    max-width: calc(100vw - 3rem) !important;
-    width: calc(100vw - 3rem) !important;
-    margin: 0 auto !important;
-    left: 50% !important;
-    transform: translateX(-50%) translateY(-50%) !important;
-  }
+/* Old mobile rules removed - using specific .mobile-dialog class instead */
+
+/* Custom modal styling for training cells */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+}
+
+/* Custom scrollbar for modal content */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.3);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(147, 51, 234, 0.6);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 51, 234, 0.8);
 }
