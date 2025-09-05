@@ -135,8 +135,8 @@ We welcome contributions from all AppsClub members! Here's how you can help:
 ## 👨‍💻 Developed By
 
 This website was developed with ❤️ by:
-- **[Youssef Taguejgalet](https://www.linkedin.com/in/youssef-tag/)** - President & Lead Developer
-- **[Houcine Gahboub](https://www.linkedin.com/in/houcine-gahboub-32955b32b)** - Training Officer & Co-Developer
+- **[Youssef Taguejgalet](https://www.linkedin.com/in/youssef-tag/)** - President
+- **[Houcine Gahboub](https://www.linkedin.com/in/houcine-gahboub-32955b32b)** - Training Officer
 
 ## 📄 License
 
