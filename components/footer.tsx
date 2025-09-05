@@ -1,7 +1,5 @@
 "use client"
 
-import { Linkedin } from "lucide-react"
-
 export default function Footer() {
   const quickLinks = [
     { name: "Home", href: "#home" },
@@ -81,20 +79,20 @@ export default function Footer() {
               href="https://www.linkedin.com/in/youssef-tag/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-0.5"
+              className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-1"
             >
+              <span className="text-blue-400">in</span>
               Youssef Taguejgalet
-              <Linkedin className="h-3 w-3" />
             </a>
             <span className="text-gray-400">and</span>
             <a
               href="https://www.linkedin.com/in/houcine-gahboub-32955b32b"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-0.5"
+              className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-1"
             >
+              <span className="text-blue-400">in</span>
               Houcine Gahboub
-              <Linkedin className="h-3 w-3" />
             </a>
           </div>
         </div>

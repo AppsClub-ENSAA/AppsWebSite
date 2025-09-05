@@ -158,7 +158,7 @@ const teamMembers: TeamMember[] = [
     id: 18,
     name: "Abdelhak Ait Kadir",
     role: "Cybersecurity Cell Assistant",
-    quote: "Securing digital frontiers with expertise.",
+    quote: "Cybersecurity begins where distraction ends.",
     linkedin: "https://www.linkedin.com/in/ait-kadir/",
     image: "/images/team/Ait Kadir .png",
     isAssistant: true,
