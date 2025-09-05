@@ -10,6 +10,7 @@ interface TeamMember {
   quote: string
   linkedin: string
   image: string
+  isAssistant?: boolean
 }
 
 const teamMembers: TeamMember[] = [
@@ -19,7 +20,7 @@ const teamMembers: TeamMember[] = [
     role: "President",
     quote: "Leading with purpose, not pressure.",
     linkedin: "https://www.linkedin.com/in/youssef-tag/",
-    image: "/images/staff/Taguejgalet.png",
+    image: "/images/team/Taguejgalet.png",
   },
   {
     id: 2,
@@ -27,7 +28,7 @@ const teamMembers: TeamMember[] = [
     role: "Vice President",
     quote: "Together, we turn ideas into action.",
     linkedin: "https://www.linkedin.com/in/nassima-charite-387319260/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BZ2%2B%2FmTLGQIeNoH%2BalXdS%2BA%3D%3D",
-    image: "/images/staff/Charite.png",
+    image: "/images/team/Charite.png",
   },
   {
     id: 3,
@@ -35,7 +36,7 @@ const teamMembers: TeamMember[] = [
     role: "Secretary",
     quote: "Alone we dream, together we achieve.",
     linkedin: "https://www.linkedin.com/in/hajar-baais-b91450321/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BZ2%2B%2FmTLGQIeNoH%2BalXdS%2BA%3D%3D",
-    image: "/images/staff/Baais.png",
+    image: "/images/team/Baais.png",
   },
   {
     id: 4,
@@ -43,7 +44,7 @@ const teamMembers: TeamMember[] = [
     role: "Treasurer",
     quote: "Behind every successful project is a team and a balanced budget.",
     linkedin: "https://www.linkedin.com/in/reda-erraoui-79a2a6130/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BZ2%2B%2FmTLGQIeNoH%2BalXdS%2BA%3D%3D",
-    image: "/images/staff/Erraoui.png",
+    image: "/images/team/Erraoui.png",
   },
   {
     id: 5,
@@ -51,7 +52,7 @@ const teamMembers: TeamMember[] = [
     role: "Logistics Officer",
     quote: "Behind the scenes, ahead of the need.",
     linkedin: "https://www.linkedin.com/in/lahoussine-el-hossni/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BZ2%2B%2FmTLGQIeNoH%2BalXdS%2BA%3D%3D",
-    image: "/images/staff/El Hossni.png",
+    image: "/images/team/El Hossni.png",
   },
   {
     id: 6,
@@ -59,7 +60,7 @@ const teamMembers: TeamMember[] = [
     role: "Technical Lead",
     quote: "Tech alone isn't enough. That's why I lead.",
     linkedin: "https://www.linkedin.com/in/hiba-ait-belmoumene-b430b6229/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3BCKSlg3V6SzGhlfXxWBajNw%3D%3D",
-    image: "/images/staff/Ait Belmoumene .png",
+    image: "/images/team/Ait Belmoumene .png",
   },
   {
     id: 7,
@@ -67,7 +68,7 @@ const teamMembers: TeamMember[] = [
     role: "Training Officer",
     quote: "The more you know, the more you realize you don't know.",
     linkedin: "https://www.linkedin.com/in/houcine-gahboub-32955b32b?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAFMyjREBvVyMBHpPplY_RT1bT9fvUA2k1Zg&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BOkmbbJBSQNOh4w0AzpH4Gw%3D%3D",
-    image: "/images/staff/Gahboub.png",
+    image: "/images/team/Gahboub.png",
   },
   {
     id: 8,
@@ -75,7 +76,7 @@ const teamMembers: TeamMember[] = [
     role: "Training Assistant",
     quote: "Here to guide you as you learn and grow.",
     linkedin: "https://www.linkedin.com/in/hajar-azaou-46b53b27a/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bovv4qgDkSc2Fxcj8wAdwCg%3D%3D",
-    image: "/images/staff/Azaou.png",
+    image: "/images/team/Azaou.png",
   },
   {
     id: 9,
@@ -83,7 +84,7 @@ const teamMembers: TeamMember[] = [
     role: "CP Cell Lead",
     quote: "Code. Compete. Improve.",
     linkedin: "https://www.linkedin.com/in/othmane-elarroussi?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFJzEVUB-DJU7W4rD2nKbCqlb1Gz-jLLTlg&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BhJq7Ej%2F1Q3ahsdIq6u0%2BjQ%3D%3D",
-    image: "/images/staff/Elarroussi.png",
+    image: "/images/team/Elarroussi.png",
   },
   {
     id: 10,
@@ -91,7 +92,7 @@ const teamMembers: TeamMember[] = [
     role: "Data Cell Lead",
     quote: "Data is our soldier. Intelligence is our victory.",
     linkedin: "https://www.linkedin.com/in/yassine-m-basskar?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAD6j8swB4S_kirhmu6XUWZ97bDT12djg_wc&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3Bj4ciQ%2FesQraaJEFrCEzE2w%3D%3D",
-    image: "/images/staff/Moutaoikkil Basskar.png",
+    image: "/images/team/Moutaoikkil Basskar.png",
   },
   {
     id: 11,
@@ -99,7 +100,7 @@ const teamMembers: TeamMember[] = [
     role: "Cybersecurity Cell Lead",
     quote: "Building, guiding, securing. That's the mission.",
     linkedin: "https://www.linkedin.com/in/hafsa-mokhlis-a5521a210?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADVs8mEB-0JKKgNSUiXi_7nrHkmVFJC55zc&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BqUBDYSgdSnau9bjDaqPkbw%3D%3D",
-    image: "/images/staff/Hafsa.png",
+    image: "/images/team/Mokhlis.png",
   },
   {
     id: 12,
@@ -107,7 +108,7 @@ const teamMembers: TeamMember[] = [
     role: "Design Officer",
     quote: "Less noise. More impact.",
     linkedin: "https://www.linkedin.com/in/mohamed-amine-bougraou-38b792335?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFRMjJsBJ6n2rhPzVgzoIbmEaLtGC30PnU4&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BTljmfhs9SheGDkP%2FSBYgTw%3D%3D",
-    image: "/images/staff/Bougraou.png",
+    image: "/images/team/Bougraou.png",
   },
   {
     id: 13,
@@ -115,7 +116,52 @@ const teamMembers: TeamMember[] = [
     role: "Photographer",
     quote: "Capturing the soul of Apps Club.",
     linkedin: "https://www.linkedin.com/in/mohamed-essadik-el-maghraoui-a62607361/",
-    image: "/images/staff/El maghraoui .png",
+    image: "/images/team/El maghraoui .png",
+  },
+  {
+    id: 14,
+    name: "Achraf Boulhem",
+    role: "CP Cell Assistant",
+    quote: "Assistant member in CP related activities",
+    linkedin: "https://www.linkedin.com/in/achraf-boulhem-b72286294?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAEc7TwYB9N4-K-wP6PnXfrr-beD8f_FNW8c&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3Bq4a%2BjC0ZSkCBM0kzqhGIGQ%3D%3D",
+    image: "/images/team/Boulhem.png",
+    isAssistant: true,
+  },
+  {
+    id: 15,
+    name: "Abd el aziz Hatafi",
+    role: "CP Cell Assistant",
+    quote: "CP, Biweekly Contests membre",
+    linkedin: "https://www.linkedin.com/in/abd-el-aziz-hatafi-8539a7312?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAE-Gaf8B_bG7Fgvq7tindzuWAxwQFNB7zjM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3B%2F3F4Xj9sQcKvYKsmlkiKMg%3D%3D",
+    image: "/images/team/Hatafi.png",
+    isAssistant: true,
+  },
+  {
+    id: 16,
+    name: "Hiba Loughzal",
+    role: "Data Cell Assistant",
+    quote: "Empowering insights, leading with data.",
+    linkedin: "https://www.linkedin.com/in/hiba-loughzal-3b5414252?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAD5afjkBeTtqWxuXTT21fhghuiIoAxbWKFA&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BBYTdGYpUSxmsR%2BrPBVCwkg%3D%3D",
+    image: "/images/team/Loughzal.png",
+    isAssistant: true,
+  },
+  {
+    id: 17,
+    name: "Amina TOUMI",
+    role: "Data Cell Assistant",
+    quote: "Data is the new fuel",
+    linkedin: "https://www.linkedin.com/in/amina-toumi-b12155252?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAD5QaP4BJHK1Ft_YyV6EAEH5tOyDeZZgBZA&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BcQRLMYeQSPui7MspHY5C2Q%3D%3D",
+    image: "/images/team/TOUMI.png",
+    isAssistant: true,
+  },
+  {
+    id: 18,
+    name: "Abdelhak Ait Kadir",
+    role: "Cybersecurity Cell Assistant",
+    quote: "Securing digital frontiers with expertise.",
+    linkedin: "https://www.linkedin.com/in/ait-kadir/",
+    image: "/images/team/Ait Kadir .png",
+    isAssistant: true,
   },
 ]
 
@@ -146,7 +192,7 @@ export default function Team() {
                 >
                   <Linkedin className="h-4 w-4" />
                 </a>
-                <div className="image-container-portrait">
+                <div className={member.isAssistant ? "image-container-portrait-assistant" : "image-container-portrait"}>
                   <img
                     src={member.image}
                     alt={member.name}

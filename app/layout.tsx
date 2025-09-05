@@ -6,12 +6,12 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "AppsClub ENSA Agadir",
+  title: "AppsClub",
   description: "Official website of AppsClub ENSA Agadir - Leading technology and innovation in software development",
   icons: {
-    icon: '/images/logo-white.png',
-    shortcut: '/images/logo-white.png',
-    apple: '/images/logo-white.png',
+    icon: '/images/apps white.png',
+    shortcut: '/images/apps white.png',
+    apple: '/images/apps white.png',
   },
 }
 

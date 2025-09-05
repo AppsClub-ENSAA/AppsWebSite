@@ -2,7 +2,7 @@
 
 Welcome to the official website repository of **AppsClub ENSA Agadir**! This is an open-source project built with modern web technologies to showcase our club's activities, training programs, and community.
 
-![AppsClub Logo](./public/images/logo-white.png)
+![AppsClub Logo](./public/images/apps white.png)
 
 ## 🌟 About AppsClub
 

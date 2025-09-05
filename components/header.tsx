@@ -49,7 +49,7 @@ export default function Header() {
           <div className="flex items-center space-x-2 sm:space-x-3">
             <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
               <img 
-                src="/images/logo-white.png" 
+                src="/images/apps white.png" 
                 alt="AppsClub Logo" 
                 className="w-full h-full object-contain"
               />
